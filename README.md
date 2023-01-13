@@ -2,7 +2,7 @@
 
 ## [Frontend repo: quotes-FE](https://github.com/devesh-anand/quotes-FE): Written in Next 13
 
-## [Backend repo: quotes-BE](https://github.com/devesh-anand/quotes-FE): Written in golang (gin framework)
+## [Backend repo: quotes-BE](https://github.com/devesh-anand/quotes-BE): Written in golang (gin framework)
 
 For years I've tried to collect the quotes I've loved. Some were written in notebooks, some on random pieces of pages and some I texted people.
 
