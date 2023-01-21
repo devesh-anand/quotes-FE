@@ -29,7 +29,7 @@ const Navbar = () => {
                   <li>
                      <a>Item 1</a>
                   </li>
-                  <li tabIndex={0}>
+                  {/* <li tabIndex={0}>
                      <a className="justify-between">
                         Parent
                         <svg
@@ -50,20 +50,17 @@ const Navbar = () => {
                            <a>Submenu 2</a>
                         </li>
                      </ul>
-                  </li>
-                  <li>
-                     <a>Item 3</a>
-                  </li>
+                  </li> */}
                </ul>
             </div>
             <a className="btn btn-ghost normal-case text-xl">Quotes</a>
          </div>
          <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
-               <li>
+               {/* <li>
                   <a>Item 1</a>
-               </li>
-               <li tabIndex={0}>
+               </li> */}
+               {/* <li tabIndex={0}>
                   <a>
                      Parent
                      <svg
@@ -84,12 +81,12 @@ const Navbar = () => {
                         <a>Submenu 2</a>
                      </li>
                   </ul>
-               </li>
-               <li>
-                  <a>Item 3</a>
-               </li>
+               </li> */}
             </ul>
          </div>
+         <label htmlFor="form-modal" className="btn">
+            Add Quote
+         </label>
          <div className="navbar-end">
             <a
                className="btn"

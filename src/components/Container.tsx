@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Card from "./Card";
+import Form from "./Form/Form";
 
 type Quote = {
    id: number;
@@ -13,7 +14,7 @@ type Quote = {
 
 const Container = async () => {
    const quotes = await getQuotes();
-   console.log(quotes);
+   // console.log(quotes);
    return (
       <div>
          {quotes.length &&
@@ -30,6 +31,8 @@ const Container = async () => {
                   />
                );
             })}
+
+         <Form />
       </div>
    );
 };
