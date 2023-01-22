@@ -14,21 +14,16 @@ const Form = () => {
 
       try {
          if (quote.length && author.length && by.length) {
-            let res = await axios.post(
-               "https://quotes-be-production.up.railway.app/quote",
-               {
-                  quote: quote,
-                  author: author,
-                  sub_by: by,
-               }
-            );
+            let res = await axios.post("https://quotes.deveshanand.com/quote", {
+               quote: quote,
+               author: author,
+               sub_by: by,
+            });
 
-            if (res.data.status == "error") {
-               console.log("error");
-               toast(res.data.message);
-            } else {
-               console.log("submitted");
-               toast.success(res.data.message, {
+            console.log("submitted");
+            toast.success(
+               "Added. Devesh will review it and then it'll show up here.",
+               {
                   position: "bottom-left",
                   autoClose: 5000,
                   hideProgressBar: false,
@@ -37,26 +32,29 @@ const Form = () => {
                   draggable: true,
                   progress: undefined,
                   theme: "light",
-               });
+               }
+            );
 
-               setQuote("");
-               setAuthor("");
-               setBy("");
-               document.getElementById("form-modal")?.click();
-            }
+            setQuote("");
+            setAuthor("");
+            setBy("");
+            // document.getElementById("form-modal")?.click();
          }
       } catch (e: any) {
          if (e.message)
-            toast.error(e.response.data ? e.response.data.message : e.message, {
-               position: "bottom-left",
-               autoClose: 5000,
-               hideProgressBar: false,
-               closeOnClick: true,
-               pauseOnHover: true,
-               draggable: true,
-               progress: undefined,
-               theme: "light",
-            });
+            toast.error(
+               e.response?.data ? e.response.data.message : e.message,
+               {
+                  position: "bottom-left",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "light",
+               }
+            );
       }
    };
 
@@ -75,6 +73,7 @@ const Form = () => {
                <textarea
                   placeholder="Type Quote here"
                   className="input input-bordered w-full h-56"
+                  value={quote}
                   onChange={(e) => setQuote(e.target.value)}
                   required
                />
@@ -86,6 +85,7 @@ const Form = () => {
                         type="text"
                         placeholder="Quote Author"
                         className="input input-bordered"
+                        value={author}
                         onChange={(e) => setAuthor(e.target.value)}
                      />
                   </label>
@@ -98,6 +98,7 @@ const Form = () => {
                         type="text"
                         placeholder="Your Name"
                         className="input input-bordered"
+                        value={by}
                         onChange={(e) => setBy(e.target.value)}
                         required
                      />
