@@ -14,11 +14,14 @@ const Form = () => {
 
       try {
          if (quote.length && author.length && by.length) {
-            let res = await axios.post("https://quotes.deveshanand.com/quote", {
-               quote: quote,
-               author: author,
-               sub_by: by,
-            });
+            let res = await axios.post(
+               "quotes-be-production.up.railway.app/quote",
+               {
+                  quote: quote,
+                  author: author,
+                  sub_by: by,
+               }
+            );
 
             console.log("submitted");
             toast.success(
