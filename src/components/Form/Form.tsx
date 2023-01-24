@@ -14,7 +14,7 @@ const Form = () => {
 
       try {
          if (quote.length && author.length && by.length) {
-            let res = await axios.post("https://api.deveshanand.com//quote", {
+            let res = await axios.post("https://api.deveshanand.com/quote", {
                quote: quote,
                author: author,
                sub_by: by,
